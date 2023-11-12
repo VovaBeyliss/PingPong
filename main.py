@@ -11,6 +11,13 @@ def run():
                         setting_board["WIDTH"],
                         setting_board["HEIGHT"]
                         )
+    
+    player_right = Board(10,
+                        setting_win["HEIGHT"] // 2 - setting_win["WIDTH"] // 2,
+                        setting_board["WIDTH"],
+                        setting_board["HEIGHT"]
+                        )
+    
     clock = pygame.time.Clock()
 
     while game:
@@ -25,6 +32,7 @@ def run():
                         )
         
         player_left.move(window)
+        player_right.move(window)
 
         for event in events:
             if event.type == pygame.QUIT:
